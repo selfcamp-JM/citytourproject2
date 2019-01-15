@@ -2,12 +2,18 @@ import React,{ Component} from "react";
 import "./Tour.scss";
 
 export default class Tour extends Component{
- render(){
-     return(
-         <article>
+  constructor(props){
+     super(props);
+
+  }
+ 
+    render(){
+    const{city,img,name,info} = this.props.tour; 
+    return(
+         <article className="tour">
              <div className="img-container">
-                <img width = "200"
-                src="https://render.fineartamerica.com/images/images-profile-flow/350/images/artworkimages/medium/1/ascension-diego-fernandez.jpg" alt="" />
+                <img 
+                src={ img } alt="" />
                 
                 <span className="close-btn">
                  <i className="fas fa-window-close"/>
@@ -15,9 +21,9 @@ export default class Tour extends Component{
              
              </div>
              <div className="tour-info">
-               <h3>City</h3>
-               <h4>Name</h4>
-               <h5>Info
+               <h3>{city}</h3>
+               <h4>{name}</h4>
+               <h5>{info}
                    <span>
                     <i className="fas fa-caret-square-down"/>
                    </span>
